@@ -284,6 +284,8 @@ int main(int argc, char** argv) {
                 << std::endl;
     }
   }
+  // Ensure audio thread stopped before close
+  audio_input->Stop();
   audio_input_file.close();
   audio_output_file.close();
 

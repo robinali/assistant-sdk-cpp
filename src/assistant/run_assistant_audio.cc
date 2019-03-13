@@ -289,6 +289,8 @@ int main(int argc, char** argv) {
       }
     }
 
+    // Ensure audio thread stopped before close
+    audio_input->Stop();
     audio_output.Stop();
 
     grpc::Status status = stream->Finish();
